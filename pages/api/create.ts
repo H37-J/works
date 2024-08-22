@@ -4,10 +4,11 @@ import type {NextApiRequest, NextApiResponse} from "next";
 const prisma = new PrismaClient()
 
 type Data = {
-    name: string;
-    region: string;
-    phone: string;
-    content: string;
+    id: string
+    name: string | null;
+    region: string | null;
+    phone: string | null;
+    content: string | null;
 };
 
 export default async function handler(req: NextApiRequest,
