@@ -17,12 +17,12 @@ export default async function handler(req: NextApiRequest,
     console.log(req.method)
     if (req.method === 'POST') {
         try {
-            const {name, region, phone, content} = req.body
+            const {name, region, phoneNumber, content} = req.body
             const customer = await prisma.customer.create({
                 data: {
                     name,
                     region,
-                    phone,
+                    phoneNumber,
                     content
                 },
             })

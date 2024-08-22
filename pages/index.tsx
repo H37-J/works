@@ -4,7 +4,7 @@ import {useState} from "react";
 export default function Home() {
     const [name, setName] = useState('')
     const [region, setRegion] = useState('')
-    const [phone, setPhone] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
     const [content, setContent] = useState('')
 
     const dataInsert = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -13,14 +13,14 @@ export default function Home() {
             const res = await fetch('/api/create', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json',   'Access-Control-Allow-Origin': '*',},
-                body: JSON.stringify({name, region, phone, content})
+                body: JSON.stringify({name, region, phoneNumber, content})
             })
             if (res.ok) {
                 const data = res.json()
                 console.log(data)
                 setName('')
                 setRegion('')
-                setPhone('')
+                setPhoneNumber('')
                 setContent('')
                 alert('상담 신청이 완료 되었습니다.\n최대한 빠르게 연락 드리겠습니다.')
             } else {
@@ -260,11 +260,11 @@ export default function Home() {
                                 </div>
                                 <div className="sm:col-span-2">
                                     <div className="mt-2.5">
-                                        <label htmlFor="phone"
+                                        <label htmlFor="phoneNumber"
                                                className="block text-sm font-semibold leading-6 text-gray-900">휴대폰
                                             번호</label>
-                                        <input onChange={(e) => setPhone(e.target.value)} type="text" name="phone"
-                                               id="phone"
+                                        <input onChange={(e) => setPhoneNumber(e.target.value)} type="text" name="phoneNumber"
+                                               id="phoneNumber"
                                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                                     </div>
                                 </div>
