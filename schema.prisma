@@ -29,7 +29,8 @@ model User {
 
 model customer {
     id String @id @default(cuid())
-    name String
-    region String
-    content String
+    name String?
+    region String?
+    phone String?
+    content String?
 }
