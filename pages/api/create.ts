@@ -3,7 +3,7 @@ import type {NextApiRequest, NextApiResponse} from "next";
 
 const prisma = new PrismaClient()
 
-type Data = {
+type RespoonseData = {
     id: string
     name: string | null;
     region: string | null;
@@ -12,7 +12,7 @@ type Data = {
 };
 
 export default async function handler(req: NextApiRequest,
-                                      res: NextApiResponse<Data>,) {
+                                      res: NextApiResponse<RespoonseData>) {
     console.log(req)
     console.log(req.method)
     if (req.method === 'POST') {
