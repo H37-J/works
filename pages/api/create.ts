@@ -3,7 +3,7 @@ import type {NextApiRequest, NextApiResponse} from "next";
 
 const prisma = new PrismaClient()
 
-type RespoonseData = {
+type ResponseData = {
     id: string
     name: string | null;
     region: string | null;
@@ -12,7 +12,7 @@ type RespoonseData = {
 };
 
 export default async function handler(req: NextApiRequest,
-                                      res: NextApiResponse<RespoonseData>) {
+                                      res: NextApiResponse<ResponseData>) {
     console.log(req)
     console.log(req.method)
     if (req.method === 'POST') {
@@ -27,8 +27,6 @@ export default async function handler(req: NextApiRequest,
                 },
             })
             res.status(200).json(customer)
-        } catch (error) {
-            res.status(500).json({error: 'Fail insert'})
         } finally {
             await prisma.$disconnect()
         }
