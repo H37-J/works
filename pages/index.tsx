@@ -10,7 +10,7 @@ export default function Home() {
     const dataInsert = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         try {
-            const res = await fetch('/api/createData', {
+            const res = await fetch('/api/create', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({name, region, phone, content})
