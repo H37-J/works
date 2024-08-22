@@ -12,7 +12,7 @@ export default function Home() {
         try {
             const res = await fetch('/api/create', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: {'Content-Type': 'application/json',   'Access-Control-Allow-Origin': '*',},
                 body: JSON.stringify({name, region, phone, content})
             })
             if (res.ok) {
