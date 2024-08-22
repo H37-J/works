@@ -7,8 +7,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    conosle.log(req)
-    conosle.log(req.method)
+    console.log(req)
+    console.log(req.method)
     if (req.method === 'POST') {
         try {
             const { name, region, phone, content } = req.body
