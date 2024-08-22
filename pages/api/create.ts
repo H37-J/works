@@ -7,7 +7,7 @@ type ResponseData = {
     id: string
     name: string | null;
     region: string | null;
-    phone: string | null;
+    phoneNumber: string | null;
     content: string | null;
 };
 
