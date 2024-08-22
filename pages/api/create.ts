@@ -13,8 +13,6 @@ type ResponseData = {
 
 export default async function handler(req: NextApiRequest,
                                       res: NextApiResponse<ResponseData>) {
-    console.log(req)
-    console.log(req.method)
     if (req.method === 'POST') {
         try {
             const {name, region, phoneNumber, content} = req.body
